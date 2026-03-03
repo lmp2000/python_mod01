@@ -34,6 +34,7 @@ class Plant():
         days = self.get_age()
         return f"{self.name} ({cm}cm, {days} days)"
 
+
 def main() -> None:
     print("=== Garden Security System ===")
     rose = Plant("Rose", 25, 30)
@@ -41,6 +42,7 @@ def main() -> None:
     rose.set_height(-5)
     print("\n")
     print(f"Current plant: {rose}")
+
 
 if __name__ == "__main__":
     main()
