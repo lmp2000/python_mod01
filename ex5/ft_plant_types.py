@@ -41,7 +41,7 @@ class Vegetable(Plant):
         self.harvest_season = harvest_season
         self.vitamin = vitamin
 
-    def nutrition(self):
+    def nutrition(self) -> None:
         print(f"{self.name} is rich in vitamin {self.vitamin}")
 
     def __str__(self) -> str:
@@ -49,7 +49,7 @@ class Vegetable(Plant):
                 f" {self.harvest_season} harvest")
 
 
-def main():
+def main() -> None:
     flowers = [
         Flower("Rose", 25, 30, "red"),
         Flower("Tulip", 20, 15, "purple)")

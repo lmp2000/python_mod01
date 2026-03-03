@@ -4,17 +4,17 @@ class Plant():
         self.height = height
         self.age = age
 
-    def grow(self, days):
+    def grow(self, days: int) -> None:
         self.height += days
 
-    def ageing(self, days):
+    def ageing(self, days: int) -> None:
         self.age += days
 
-    def get_info(self):
+    def get_info(self) -> str:
         return f"{self.name} ({self.height}cm, {self.age} days)"
 
 
-def plant_factory():
+def plant_factory() -> list:
     plant_ingredients = [
         ["Rose", 25, 30],
         ["Oak", 200, 365],
@@ -26,7 +26,7 @@ def plant_factory():
     return plants
 
 
-def main():
+def main() -> None:
     plants = plant_factory()
     print("=== Plant Factory Output ===")
     for plant in plants:

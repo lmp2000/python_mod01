@@ -1,11 +1,11 @@
 class Plant():
-    def __init__(self, name, height, age):
+    def __init__(self, name: str, height: str, age: str):
         self.name = name
         self.height = height
         self.age = age
 
 
-def main():
+def main() -> None:
     rose = Plant("Rose", "25", "30")
     sunflower = Plant("Sunflower", "80", "45")
     cactus = Plant("Cactus", "15", "120")

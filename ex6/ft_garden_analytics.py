@@ -64,7 +64,7 @@ class Garden:
         print(f"Added {plant.name} to {self.owner}'s garden")
 
     def grow_plants(self) -> None:
-        print(f"{self.owner} is helping all plants grow...")
+        print(f"\n{self.owner} is helping all plants grow...")
         for plant in self.plants:
             grow_qty = plant.grow()
             self.total_growth += grow_qty
@@ -92,8 +92,8 @@ class Garden:
         print("Plants in garden:")
         for plant in self.plants:
             print(f"- {plant}")
-        print(f"\nPlants added: {self.added_count},"
-              "Total growth: {self.total_growth}cm")
+        print(f"\nPlants added: {self.added_count},",
+              f"Total growth: {self.total_growth}cm")
 
         regular, flowering, prize = 0, 0, 0
         for plant in self.plants:
@@ -105,7 +105,7 @@ class Garden:
             elif k == "prize":
                 prize += 1
         print(f"Plant types: {regular} regular, {flowering}",
-              "flowering, {prize} prize flowers\n")
+              f"flowering, {prize} prize flowers\n")
 
 
 class GardenManager:
@@ -169,3 +169,28 @@ class GardenManager:
         print(f"Garden scores - {score_text}")
 
         print(f"Total gardens managed: {self.stats.total_gardens()}")
+
+
+def main() -> None:
+    print("=== Garden Management System Demo ===\n")
+
+    manager = GardenManager.create_garden_network(["Alice", "Bob"])
+    alice = manager.get_garden("Alice")
+
+    plants = [
+        Plant("Oak Tree", 100, 10),
+        FloweringPlant("Rose", 25, 10, "red"),
+        PrizeFlower("Sunflower", 50, 10, "yellow", 10)
+    ]
+
+    for plant in plants:
+        alice.add_plant(plant)
+
+    alice.grow_plants()
+    alice.report()
+
+    manager.manager_output()
+
+
+if __name__ == "__main__":
+    main()

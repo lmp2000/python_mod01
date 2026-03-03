@@ -4,17 +4,17 @@ class Plant():
         self.height = height
         self.age = age
 
-    def grow(self, days):
+    def grow(self, days: int) -> None:
         self.height += days
 
-    def ageing(self, days):
+    def ageing(self, days: int) -> None:
         self.age += days
 
-    def get_info(self):
+    def get_info(self) -> None:
         print(f"{self.name}: {self.height}cm, {self.age} days old")
 
 
-def main():
+def main() -> None:
     rose = Plant("Rose", 25, 30)
     print("=== Day 1 ===")
     rose.get_info()
